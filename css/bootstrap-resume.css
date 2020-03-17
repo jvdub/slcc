@@ -1,0 +1,25 @@
+.parallax {
+    /* Set a specific height */
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.canyonlands {
+    background-image: url("../images/DSCN0179\ \(2\).JPG");
+}
+
+.code-image {
+    background-image: url("../images/code_programming_text_140050_1350x2400.jpg");
+}
+
+.row-full {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+}

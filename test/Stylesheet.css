@@ -1,0 +1,94 @@
+
+  
+  body, html {
+    height: 500px;
+  }
+  
+  .parallax {
+    /* The image used */
+    background-image: url('thumbnail.jpg');
+  
+    /* Full height */
+    height: 1000px; 
+  
+    /* parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  * {
+    box-sizing: border-box;
+    }
+    
+    
+    .footer {
+    background-color:blue;
+    color : blue;
+    padding: 15px;
+    }
+    .column {
+    float: left;
+    padding: 15px;
+  }
+  .container-fluid {
+    background-color: rgb(10, 10, 10);
+  }
+  .row {
+        background-color:blue
+  }
+  .col {background-color:blue;
+  }
+  .col-md.one {background-color: darkviolet;}
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .menu {
+    width: 25%;
+  }
+  
+  .content {
+    width: 75%;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color:blue ;
+  color:white;
+  }
+  
+  .menu li:hover {
+    background-color: #0099cc;
+  }
+    .table-container {
+      width: 80%;
+      margin: auto;
+    }
+  
+  h1 {
+    color: #b30000;
+    font-family:impact;
+    text-align: center;
+    text-shadow: 3px 2px black;
+   }
+  h2 {
+  color: #b30000;
+    font-family:impact;
+    text-align: left;
+
+   }
+   
+   p, td {
+   color: white;
+  }
