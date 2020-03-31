@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actions and Methods</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Actions and Methods</h1>
+        <p class="lead">Actions and Methods define how the data looks and where it goes.</p>
+        <p>The <code>action</code> attribute defines where to send the data when the user submits the form.</p>
+        <p>Usually this is a file on the server that can process the data it receives (we'll use PHP for this in the last course)</p>
+        <p>The <code>method</code> attribute defines if the data is sent in the URL or "hidden" in the body of the request.</p>
+        <p>There are two main methods that are used; <code>GET</code> and <code>POST</code></p>
+        <p>The <code>GET</code> method sends the data in the URL. This is useful for bookmarking requests but does make the data rather visible.</p>
+        <p>
+            The <code>POST</code> method sends the data in the body of the request which makes the data less visible.
+            This is generally used for when sensitive information or large amounts of data is being sent.
+        </p>
+        <p>Here are some examples:</p>
+        <form action="doLogin.php" method="POST">
+            <label>
+                Username:
+                <input type="text" name="username" value="">
+            </label>
+            <label>
+                Password:
+                <input type="password" name="password" value="">
+            </label>
+            <input type="submit" name="login" value="Log In">
+        </form>
+        <pre><code>
+            &lt;form action="doLogin.php" method="POST"&gt;
+                &lt;label&gt;
+                    Username:
+                    &lt;input type="text" name="username" value=""&gt;
+                &lt;/label&gt;
+                &lt;label&gt;
+                    Password:
+                    &lt;input type="password" name="password" value=""&gt;
+                &lt;/label&gt;
+                &lt;input type="submit" name="login" value="Log In"&gt;
+            &lt;/form&gt;
+        </code></pre>
+        <form action="addToNewsletter.php" method="GET">
+            <label>
+                Email:
+                <input type="email" name="email" value="">
+            </label>
+            <input type="submit" name="signup" value="Sign Me Up!">
+        </form>
+        <pre><code>
+            &lt;form action="addToNewsletter.php" method="GET"&gt;
+                &lt;label&gt;
+                    Email:
+                    &lt;input type="email" name="email" value=""&gt;
+                &lt;/label&gt;
+                &lt;input type="submit" name="signup" value="Sign Me Up!"&gt;
+            &lt;/form&gt;
+        </code></pre>
+    </div>
+    <script>
+        function handleSubmit(event) {
+            alert('Submitted!');
+            event.preventDefault();
+            document.querySelectorAll('input').forEach(e => {
+                if (e.type !== 'submit') {
+                    e.value = ''
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('form').addEventListener('submit', handleSubmit);
+        });
+    </script>
+</body>
+</html>

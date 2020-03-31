@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Names and Values</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-1">Names and Values</h1>
+        <p class="lead">Names and Values help define the data to be passed to the server.</p>
+        <p>Each input type can have a <code>name</code> and a <code>value</code> attribute.</p>
+        <p>If you don't definet he value attribute, one will be added behind-the-scenes in HTML.</p>
+        <p>The <code>name</code> attribute should be included on all input fields that are in a <code>form</code></p>
+        <p>Here's an example:</p>
+        <form>
+            <label>
+                Username:
+                <input type="text" name="username" value="">
+            </label>
+            <label>
+                Password:
+                <input type="password" name="password" value="">
+            </label>
+            <input type="submit" name="login" value="Log In">
+        </form>
+        <pre><code>
+            &lt;form&gt;
+                &lt;label&gt;
+                    Username:
+                    &lt;input type="text" name="username" value=""&gt;
+                &lt;/label&gt;
+                &lt;label&gt;
+                    Password:
+                    &lt;input type="password" name="password" value=""&gt;
+                &lt;/label&gt;
+                &lt;input type="submit" name="login" value="Log In"&gt;
+            &lt;/form&gt;
+        </code></pre>
+    </div>
+    <script>
+        function handleSubmit(event) {
+            alert('Cannot log in!');
+            event.preventDefault();
+            document.querySelectorAll('input').forEach(e => {
+                if (e.type !== 'submit') {
+                    e.value = ''
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('form').addEventListener('submit', handleSubmit);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-1">HTML Forms</h1>
+        <p class="lead">HTML form are a way to send data to the server.</p>
+        <p>
+            HTML forms are used all over the internet. Many times, if
+            you're entering information in text field or making selections
+            with radio or checkboxes, you're filling out a form.
+        </p>
+        <p>HTML forms are created usind the <code>&lt;form&gt;</code> tag.</p>
+        <p>
+            HTML forms have three key parts:
+            <ol>
+                <li>The input fields (e.g. text boxes, checkboxes, etc.)</li>
+                <li>A submit button</li>
+                <li>An action (where to send the data)</li>
+            </ol>
+        </p>
+        <p>
+            Here's a quick example of a form:
+        </p>
+        <form action=""> <!-- You'd normally have an action defined here. For this small example, I left it blank. -->
+            <label>
+                Please enter your name:
+                <input type="text" name="name">
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+        <pre><code>
+            &lt;form action=""&gt; &lt;!-- You'd normally have an action defined here. For this small example, I left it blank. --&gt;
+                &lt;label&gt;
+                    Please enter your name:
+                    &lt;input type="text" name="name"&gt;
+                &lt;/label&gt;
+                &lt;button type="submit"&gt;Submit&lt;/button&gt;
+            &lt;/form&gt;
+        </code></pre>
+    </div>
+    <script>
+        function handleSubmit(event) {
+            alert('Thanks for visiting!');
+            event.preventDefault();
+            document.querySelector('input').value = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('form').addEventListener('submit', handleSubmit);
+        });
+    </script>
+</body>
+</html>

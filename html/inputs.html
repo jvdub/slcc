@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Types</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-1">HTML Input Types</h1>
+        <p class="lead">HTML inputs are how users enter data.</p>
+        <p>There are many types of inputs. We'll cover many of them here.</p>
+        <p>All the inputs discussed in this section use the <code>&lt;input&gt;</code> tag.</p>
+        <p>Most inputs are more helpful when they have a label. You can add a label to an input in one of two ways.</p>
+        <p>Surrounding the input:</p>
+        <pre><code>
+            &lt;label&gt;Please enter your name:
+                &lt;input type="text"&gt;
+            &lt;/label&gt;
+        </code></pre>
+        <p>Or by using ID's:</p>
+        <pre><code>
+            &lt;label for="name"&gt;Please enter your name:&lt;/label&gt;
+            &lt;input type="text" id="name"&gt;
+        </code></pre>
+        
+        <h2>Text</h2>
+        <p>Text inputs are among the most common iputs used.</p>
+        <p>They're used to gather basic text data from the user.</p>
+        <p>You create this type of input with the following tag: <code>&lt;input type="text"&gt;</code></p>
+        <p>Here's an example:</p>
+        <input type="text">
+        <pre><code>
+            &lt;input type="text"&gt; Test
+        </code></pre>
+        <label for="name">Please enter your name:</label>
+        <input type="text" id="name">
+        <pre><code>
+            &lt;label for="name"&gt;Please enter your name:&lt;/label&gt;
+            &lt;input type="text" id="name"&gt;
+        </code></pre>
+
+        <h2>Radio</h2>
+        <p>Radio inputs are used when you want users to select one and only one of the available options.</p>
+        <p>You create this type of input with the following tag: <code>&lt;input type="radio"&gt;</code></p>
+        <p>Here's an example:</p>
+        <input type="radio"> Test
+        <pre><code>
+            &lt;input type="radio"&gt;
+        </code></pre>
+        <p>Radio buttons aren't really useful without more than one button and labels to distinguish them.</p>
+        <label>
+            <input type="radio" name="radioOption" value="1"> Option 1
+        </label>
+        <label>
+            <input type="radio" name="radioOption" value="2"> Option 2
+        </label>
+        <pre><code>
+            &lt;label&gt;
+                &lt;input type="radio" name="radioOption" value="1"&gt; Option 1
+            &lt;/label&gt;
+            &lt;label&gt;
+                &lt;input type="radio" name="radioOption" value="2"&gt; Option 2
+            &lt;/label&gt;
+        </code></pre>
+        
+        <h2>Checkbox</h2>
+        <p>Checkboxes are very similar to radios but they allow multiple options to be selected.</p>
+        <p>You create this type of input with the following tag: <code>&lt;input type="checkbox"&gt;</code></p>
+        <p>Here's an example:</p>
+        <input type="checkbox"> Test
+        <pre><code>
+            &lt;input type="checkbox"&gt; Test
+        </code></pre>
+        <p>While checkboxes can have a single option, they're often found in groups with labels.</p>
+        <label>
+            <input type="checkbox" name="checkboxOption" value="1"> Option 1
+        </label>
+        <label>
+            <input type="checkbox" name="checkboxOption" value="2"> Option 2
+        </label>
+        <pre><code>
+            &lt;label&gt;
+                &lt;input type="checkbox" name="checkboxOption" value="1"&gt; Option 1
+            &lt;/label&gt;
+            &lt;label&gt;
+                &lt;input type="checkbox" name="checkboxOption" value="2"&gt; Option 2
+            &lt;/label&gt;
+        </code></pre>
+        
+        <h2>Password</h2>
+        <p>Password input types are usually used on login or account creation pages.</p>
+        <p>They're very similar to text inputs but mask the data as it's entered.</p>
+        <p>You create this type of input with the following tag: <code>&lt;input type="password"&gt;</code></p>
+        <p>Here's an example:</p>
+        <label>
+            Password:
+            <input type="password">
+        </label>
+        <pre><code>
+            &lt;label&gt;
+                Password:
+                &lt;input type="password"&gt;
+            &lt;/label&gt;
+        </code></pre>
+        
+        <h2>Submit</h2>
+        <p>The submit input type creates a button that submits the form that contains it.</p>
+        <p>You create this type of input with the following tag: <code>&lt;input type="submit"&gt;</code></p>
+        <p>Here's an example:</p>
+        <input type="submit">
+        <pre><code>
+            &lt;input type="submit"&gt;
+        </code></pre>
+        <p>You can customize the text of the button with the <code>value</code> attribute as follows:</p>
+        <input type="submit" value="Send it!">
+        <pre><code>
+            &lt;input type="submit" value="Send it!"&gt;
+        </code></pre>
+        
+        <h2>Date</h2>
+        <p>The date input type restricts the user to selecting a valid date.</p>
+        <p>You create this type of input with the following tag: <code>&lt;input type="date"&gt;</code></p>
+        <p>Here's an example:</p>
+        <input type="date">
+        <pre><code>
+            &lt;input type="date"&gt;
+        </code></pre>
+        <p>Using the <code>min</code> and <code>max</code> attributes, you can restrict the dates the user can select from.</p>
+        <label for="start">Start date:</label>
+        <input type="date" id="start" name="trip-start" value="2020-07-22" min="2020-01-01" max="2020-12-31">
+        <pre><code>
+            &lt;label for="start"&gt;Start date:&lt;/label&gt;
+            &lt;input type="date" id="start" name="trip-start" value="2020-07-22" min="2020-01-01" max="2020-12-31"&gt;
+        </code></pre>
+        
+        <h2>Email</h2>
+        <p>The email input restricts the user to entering a valid email address.</p>
+        <p>You create this type of input with the following tag: <code>&lt;input type="email"&gt;</code></p>
+        <p>Here's an example:</p>
+        <input type="email">
+        <pre><code>
+            &lt;input type="email"&gt;
+        </code></pre>
+        
+        <h2>Number</h2>
+        <p>The number input restricts the user to enter a valid number.</p>
+        <p>You create this type of input with the following tag: <code>&lt;input type="number"&gt;</code></p>
+        <p>Here's an example:</p>
+        <input type="number">
+        <pre><code>
+            &lt;input type="number"&gt;
+        </code></pre>
+        <p>Using the <code>min</code> and <code>max</code> attributes, you can restrict the dates the user can select from.</p>
+        <label>
+            Favorite Number:
+            <input type="number" min="0" max="100">
+        </label>
+        <pre><code>
+            &lt;label&gt;
+                Favorite Number:
+                &lt;input type="number" min="0" max="100"&gt;
+            &lt;/label&gt;
+        </code></pre>
+        
+        <h2>URL</h2>
+        <p>The URL input type restricts the user to a valid URL.</p>
+        <p>You create this type of input with the following tag: <code>&lt;input type="url"&gt;</code></p>
+        <p>Here's an example:</p>
+        <input type="url">
+        <pre><code>
+            &lt;input type="url"&gt;
+        </code></pre>
+        
+        <h2>Color</h2>
+        <p>The color input allows the user to select a color from a color pallette.</p>
+        <p>You create this type of input with the following tag: <code>&lt;input type="color"&gt;</code></p>
+        <p>Here's an example:</p>
+        <input type="color">
+        <pre><code>
+            &lt;input type="color"&gt;
+        </code></pre>
+    </div>
+</body>
+</html>
