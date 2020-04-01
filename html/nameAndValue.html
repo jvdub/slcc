@@ -17,7 +17,7 @@
         <p>If you don't definet he value attribute, one will be added behind-the-scenes in HTML.</p>
         <p>The <code>name</code> attribute should be included on all input fields that are in a <code>form</code></p>
         <p>Here's an example:</p>
-        <form>
+        <form action="" method="POST">
             <label>
                 Username:
                 <input type="text" name="username" value="">
@@ -43,19 +43,19 @@
         </code></pre>
     </div>
     <script>
-        function handleSubmit(event) {
-            alert('Cannot log in!');
-            event.preventDefault();
-            document.querySelectorAll('input').forEach(e => {
-                if (e.type !== 'submit') {
-                    e.value = ''
-                }
-            });
-        }
+        // function handleSubmit(event) {
+        //     alert('Cannot log in!');
+        //     event.preventDefault();
+        //     document.querySelectorAll('input').forEach(e => {
+        //         if (e.type !== 'submit') {
+        //             e.value = ''
+        //         }
+        //     });
+        // }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelector('form').addEventListener('submit', handleSubmit);
-        });
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     document.querySelector('form').addEventListener('submit', handleSubmit);
+        // });
     </script>
 </body>
 </html>
