@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Declarations</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <style>
+        .all-the-things {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1em;
+            font-style: italic;
+            font-weight: bold;
+            color: #0045CC;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-2">CSS Declarations</h1>
+        <p class="lead">Let's discuss some of the most common style properties used.</p>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h2 class="display-1">Background</h2>
+                <hr>
+                <p>The background property is widely changed.</p>
+                <p>Let's face it: plain white backgrounds are pretty boring.</p>
+                <p>The most basic way to change the background is just change the color.</p>
+                <p style="background-color: cornflowerblue;">Example</p>
+                <pre><code>
+                    &lt;p style="background-color: cornflowerblue;"&gt;Example&lt;/p&gt;
+                </code></pre>
+                <p>Oftentimes you'll also want to change the text color as well. Simply use the <code>color</code> property to do so.</p>
+                <p style="background-color: midnightblue; color: white;">Dark example.</p>
+                <pre><code>
+                    &lt;p style="background-color: midnightblue; color: white;"&gt;Dark example.&lt;/p&gt;
+                </code></pre>
+                <p>The <code>background-color</code> style can be applied to any HTML element with a display area.</p>
+                <p>The <code>color</code> style can be applied to any HTML element with text in the body of the page.</p>
+            </div>
+        </div>
+        <h1 class="display-2">Spacing (Box Model)</h1>
+        <p class="lead">Don't stand so close to me</p>
+        <p>Spacing is used to put give HTML elements breathing room for a good user experience.</p>
+        <p>There are three main properties used for spacing:</p>
+        <ul>
+            <ul><code>margin</code></ul>
+            <ul><code>border</code></ul>
+            <ul><code>padding</code></ul>
+        </ul>
+        <img src="//www.w3.org/TR/CSS2/images/boxdim.png" title="margin, border, and padding">
+        <p>The first one to adjust is typically <code>margin</code>, though all play a part in good spacing.</p>
+        <p>Here's an example:</p>
+        <p style="background-color: wheat;">Gluten needs space!</p>
+        <p style="background-color: wheat; margin: 30px;">Gluten needs space!</p>
+        <pre><code>
+            &lt;p style="background-color: wheat;"&gt;Gluten needs space!&lt;/p&gt;
+            &lt;p style="background-color: wheat; margin: 30px;"&gt;Gluten needs space!&lt;/p&gt;
+        </code></pre>
+        <p>You can use <code>margin-&lt;SIDE&gt;</code> to apply margin to a specific side of the element.</p>
+        <p>Or you can use <code>margin: top right bottom left;</code> to apply different values to different sides all at once.</p>
+        <p style="background-color: wheat; margin-left: 50px;">To the right!</p>
+        <p style="background-color: wheat; margin: 10px 50px 25px 100px;">All around</p>
+        <pre><code>
+            &lt;p style="background-color: wheat; margin-left: 50px;"&gt;To the right!&lt;/p&gt;
+            &lt;p style="background-color: wheat; margin: 10px 50px 25px 100px;"&gt;All around&lt;/p&gt;
+        </code></pre>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h2 class="display-1">Units of Measure</h2>
+                <hr>
+                <p>There are various ways to tell the browser how far to move things or how much room it should occupy.</p>
+                <p>Pixels, or <code>px</code>, is a very common way but is not best practice.</p>
+                <p>Pixels are too rigid and don't translate well to devices with different screen sizes and pixel desities.</p>
+                <p><a href="https://gist.github.com/basham/2175a16ab7c60ce8e001">This guide</a> does a great job explaining the current best practices.</p>
+            </div>
+        </div>
+        <h1 class="display-2">Height and Width</h1>
+        <p><code>Height</code> and <code>width</code> are critical properties to use.</p>
+        <p>The browser will default to the minimum height and minimum width needed for an element to be displayed.</p>
+        <p>At times, that's just not enough.</p>
+        <p>
+            If you want to center text on the page or on a section of the page,
+            you'll need to element (and possibly its parents) to take up the
+            entire width and height. You do this with the <code>width</code> and <code>height</code> properties.
+        </p>
+        <p>Example:</p>
+        <div style="background-color: tomato; height: 100px; width: 100px;"></div>
+        <pre><code>
+            &lt;div style="background-color: tomato; height: 100px; width: 100px;"&gt;&lt;/div&gt;
+        </code></pre>
+        <p>Any valid CSS unit is acceptable here (%, em, rem, etc.)</p>
+        <p>Can also specify minimum and maximum height and width with their accompanying attributes:</p>
+        <ul>
+            <li><code>min-height</code></li>
+            <li><code>max-height</code></li>
+            <li><code>min-width</code></li>
+            <li><code>max-width</code></li>
+        </ul>
+        
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h2 class="display-2">Font and Text</h2>
+                <hr>
+                <p>Font is a very common thing to change.</p>
+                <p>From colors to font face to size and more, this is one of the key parts of any website.</p>
+                <p>Here are the basic font properties:</p>
+                <ul>
+                    <li><code>font-family</code></li>
+                    <ul><li>This changes the font of the text (eg. Times New Roman, Arial, Comic Sans, etc.)</li></ul>
+                    <li><code>font-size</code></li>
+                    <ul><li>This changes the size of the font (usually denoted with <code>em</code>)</li></ul>
+                    <li><code>font-style</code></li>
+                    <ul><li>Can denote normal, italic, or oblique.</li></ul>
+                    <li><code>font-weight</code></li>
+                    <ul><li>Can be normal, bold, or a number denoting how bold to make the text.</li></ul>
+                    <li><code>color</code></li>
+                    <ul><li>A simple color property of the text (any valid CSS color is accepted)</li></ul>
+                    <li><code>text-align</code></li>
+                    <ul><li>Used to align the text left, right, center, or justified.</li></ul>
+                </ul>
+                <p class="all-the-things">All the things!</p>
+                <pre><code>
+                    .all-the-things {
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        font-size: 1em;
+                        font-style: italic;
+                        font-weight: bold;
+                        color: #0045CC;
+                        text-align: center;
+                    }
+
+                    &lt;p class="all-the-things"&gt;All the things!&lt;/p&gt;
+                </code></pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
