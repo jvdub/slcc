@@ -1,0 +1,60 @@
+body {
+    font-family: sans-serif;
+    margin: 0px;
+}
+
+.container {
+    margin-left: 20%;
+    margin-right: 20%;
+    position: relative;
+}
+
+#home {
+    height: 400px;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    top: 50px;
+    padding-left: 21vw;
+    padding-top:45vh;
+
+    background-image: url(../images/DSCN0179\ \(2\).JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: white;
+}
+
+#home > h1 {
+    font-size: 5em;
+}
+
+nav {
+    background-color: gray;
+    height: 50px;
+    position: absolute;
+    width: 100vw;
+}
+
+nav > div {
+    height: 100%;
+}
+
+nav > div > a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem .75rem;
+    height: 100%;
+    position: relative;
+    top: 1rem;
+}
+
+nav > div > a:hover {
+    background-color: darkslategray;
+}
+
+body > div.container {
+    top: -5em;
+}
