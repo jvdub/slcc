@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Van Wagenen</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#home">Home</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#competencies">Competencies</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#references">References</a>
+        </div>
+    </nav>
+
+    <section id="home">
+        <h1>John Van Wagenen</h1>
+        <p>Software Engineer with a passion for helping things go right.</p>
+    </section>
+
+    <div class="container">
+        <div id="mug-shot">
+            <img src="images/John2019.jpg" title="John Van Wagenen mugshut" height="200">
+        </div>
+
+        <section id="education">
+            <h1>Education</h1>
+            <article>
+                <h4>The Georgia Institute of Technology</h4>
+                <h5>MS Computer Science - Interactive Intelligence</h5>
+            </article>
+            <article>
+                <h4>Utah State University</h4>
+                <h5>BS Computer Science - Minors in Business and Management</h5>
+            </article>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h1>Professional Experience</h1>
+            <article>
+                <h3><a href="...">MasterControl Inc.</a></h3>
+                <h4>Engineering Manager</h4>
+                <h5>February 2018 - Present</h5>
+                <p>
+                    Managed multiple software teams and a team of tech writers in the effective delivery of their products. Coached engineers on
+                    best practices in software engineering. Coached individuals in their careers. Resolved conflicts, managed projects, coordinated
+                    with various other groups, and acted as a change agent in my peer group.
+                </p>
+                <ul>
+                    <li>Led up to 14 individuals in effective software delivery</li>
+                    <li>Coordinated the development and delivery of development work</li>
+                </ul>
+                <h4>Software Engineer</h4>
+                <h5>May 2014 - Feb 2018</h5>
+                <p>
+                    Coded stuff.
+                </p>
+                <ul>
+                    <li>Tech Lead</li>
+                    <li>Scrum Master</li>
+                    <li>Helped drive change</li>
+                </ul>
+            </article>
+            <article>
+                <h3><a href="https://www.conservice.com/">Conservice, LLC</a></h3>
+                <h4>Web Developer</h4>
+                <h5>January 2013 - March 2014</h5>
+                <p>
+                    Coded stuff.
+                </p>
+                <ul>
+                    <li>Trained employees in JavaScript and C#</li>
+                    <li>Tech Lead</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="skills">
+            <h1>Technical Skills</h1>
+            <ul>
+                <li class="column">Languages
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>Java</li>
+                        <li>SQL (T-SQL, Postgres, MySQL)</li>
+                        <li>HTML/CSS</li>
+                        <li>Python</li>
+                    </ul>
+                </li>
+                <li class="column">Frameworks
+                    <ul>
+                        <li>Angular</li>
+                        <li>Spring</li>
+                        <li>Vue.js</li>
+                    </ul>
+                </li>
+                <li class="column">Leadership
+                    <ul>
+                        <li>Technical Leadershsip</li>
+                        <li>Team Leadershsip</li>
+                        <li>Mentoring</li>
+                        <li>Career Guidance</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="competencies">
+            <h1>Core Competencies</h1>
+            <ul>
+                <li>Leadership/Management</li>
+                <li>Agile Software Development</li>
+                <li>Clear Communication Skills (written and verbal)</li>
+            </ul>
+        </section>
+
+        <section id="certificates">
+            <h1>Certificates and Awards</h1>
+        </section>
+
+        <section id="portfolio">
+            <h1>Portfolio of Projects</h1>
+        </section>
+
+        <section id="references">
+            <h1>References and Testimonials</h1>
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>E-mail Address</th>
+                </tr>
+                <tr>
+                    <td>Bob Dole</td>
+                    <td>800-555-5555</td>
+                    <td>bob.dole@aol.com</td>
+                </tr>
+                <tr>
+                    <td>Bill Clinton</td>
+                    <td>800-555-1234</td>
+                    <td>bill@aol.com</td>
+                </tr>
+                <tr>
+                    <td>Ralph Nader</td>
+                    <td>800-555-2345</td>
+                    <td>ralph.nader@aol.com</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h1>Contact</h1>
+            <form method="POST">
+                <label>
+                    Name:
+                    <input type="text" name="name" placeholder="Your Name">
+                </label>
+                <br>
+                <label>
+                    Email:
+                    <input type="email" name="email" placeholder="email@email.com">
+                </label>
+                <br>
+                <label>
+                    Phone Number:
+                    <input type="text" name="phoneNumber" placeholder="800-555-1234">
+                </label>
+                <br>
+                <p>Reason for contacting:</p>
+                <label>
+                    <input type="radio" name="reasonForContacting" value="reference"> Reference
+                </label>
+                <label>
+                    <input type="radio" name="reasonForContacting" value="testimonial"> Testimonial
+                </label>
+                <label>
+                    <input type="radio" name="reasonForContacting" value="workRequest"> Request Services
+                </label>
+                <br>
+                <label>
+                    Comments:
+                    <textarea name="comment" rows="10" cols="100"></textarea>
+                </label>
+                <br>
+                <input type="submit" name="submit">
+            </form>
+        </section>
+
+        <footer>
+            <div class="container">
+                <a href="https://www.linkedin.com/in/john-van-wagenen/">LinkedIn</a>
+                <a href="../De-Blame Collusion_1.1.pdf">Resume</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
