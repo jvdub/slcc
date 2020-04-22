@@ -4,25 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>John Van Wagenen</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/myStyles.css">
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <a href="#home">Home</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#competencies">Competencies</a>
-            <a href="#certificates">Certificates</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#references">References</a>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav" aria-controls="mynav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#competencies">Competencies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#certificates">Certificates</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#references">References</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
     <section id="home">
-        <h1>John Van Wagenen</h1>
-        <p>Software Engineer with a passion for helping things go right.</p>
+        <h1 class="display-1">John Van Wagenen</h1>
+        <p class="lead">Software Engineer with a passion for helping things go right.</p>
     </section>
 
     <div class="container">
@@ -32,14 +54,18 @@
 
         <section id="education">
             <h1>Education</h1>
-            <article>
-                <h4>The Georgia Institute of Technology</h4>
-                <h5>MS Computer Science - Interactive Intelligence</h5>
-            </article>
-            <article>
-                <h4>Utah State University</h4>
-                <h5>BS Computer Science - Minors in Business and Management</h5>
-            </article>
+            <div class="row">
+                <div class="col">
+                    <h4>The Georgia Institute of Technology</h4>
+                    <p>MS Computer Science - Interactive Intelligence</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Utah State University</h4>
+                    <p>BS Computer Science - Minors in Business and Management</p>
+                </div>
+            </div>
         </section>
 
         <!-- Experience -->
@@ -85,8 +111,8 @@
 
         <section id="skills">
             <h1>Technical Skills</h1>
-            <ul>
-                <li class="column">Languages
+            <ul class="row">
+                <li class="col-md">Languages
                     <ul>
                         <li>JavaScript</li>
                         <li>Java</li>
@@ -95,14 +121,14 @@
                         <li>Python</li>
                     </ul>
                 </li>
-                <li class="column">Frameworks
+                <li class="col-md">Frameworks
                     <ul>
                         <li>Angular</li>
                         <li>Spring</li>
                         <li>Vue.js</li>
                     </ul>
                 </li>
-                <li class="column">Leadership
+                <li class="col-md">Leadership
                     <ul>
                         <li>Technical Leadershsip</li>
                         <li>Team Leadershsip</li>
@@ -124,73 +150,102 @@
 
         <section id="certificates">
             <h1>Certificates and Awards</h1>
+            <ul>
+                <li>Developer of the Year (MasterControl) 2015</li>
+                <li>Employee of the Quarter (MasterControl) 2017</li>
+            </ul>
         </section>
 
         <section id="portfolio">
             <h1>Portfolio of Projects</h1>
+            <p><a href="https://github.com/jvdub/">GitHub</a></p>
         </section>
 
         <section id="references">
             <h1>References and Testimonials</h1>
-            <table border="1">
-                <tr>
-                    <th>Name</th>
-                    <th>Phone Number</th>
-                    <th>E-mail Address</th>
-                </tr>
-                <tr>
-                    <td>Bob Dole</td>
-                    <td>800-555-5555</td>
-                    <td>bob.dole@aol.com</td>
-                </tr>
-                <tr>
-                    <td>Bill Clinton</td>
-                    <td>800-555-1234</td>
-                    <td>bill@aol.com</td>
-                </tr>
-                <tr>
-                    <td>Ralph Nader</td>
-                    <td>800-555-2345</td>
-                    <td>ralph.nader@aol.com</td>
-                </tr>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>E-mail Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bob Dole</td>
+                        <td>800-555-5555</td>
+                        <td>bob.dole@aol.com</td>
+                    </tr>
+                    <tr>
+                        <td>Bill Clinton</td>
+                        <td>800-555-1234</td>
+                        <td>bill@aol.com</td>
+                    </tr>
+                    <tr>
+                        <td>Ralph Nader</td>
+                        <td>800-555-2345</td>
+                        <td>ralph.nader@aol.com</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
 
         <section id="contact">
             <h1>Contact</h1>
             <form method="POST">
-                <label>
-                    Name:
-                    <input type="text" name="name" placeholder="Your Name">
-                </label>
-                <br>
-                <label>
-                    Email:
-                    <input type="email" name="email" placeholder="email@email.com">
-                </label>
-                <br>
-                <label>
-                    Phone Number:
-                    <input type="text" name="phoneNumber" placeholder="800-555-1234">
-                </label>
-                <br>
-                <p>Reason for contacting:</p>
-                <label>
-                    <input type="radio" name="reasonForContacting" value="reference"> Reference
-                </label>
-                <label>
-                    <input type="radio" name="reasonForContacting" value="testimonial"> Testimonial
-                </label>
-                <label>
-                    <input type="radio" name="reasonForContacting" value="workRequest"> Request Services
-                </label>
-                <br>
-                <label>
-                    Comments:
-                    <textarea name="comment" rows="10" cols="100"></textarea>
-                </label>
-                <br>
-                <input type="submit" name="submit">
+                <div class="row">
+                    <div class="col-md form-group">
+                        <label for="name">
+                            Name:
+                        </label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="col-md form-group">
+                        <label for="email">
+                            Email:
+                        </label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="email@email.com">
+                    </div>
+                    <div class="col-md form-group">
+                        <label for="phone-number">
+                            Phone Number:
+                        </label>
+                        <input type="text" id="phone-number" name="phoneNumber" class="form-control" placeholder="800-555-1234">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <p>Reason for contacting:</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="reasonForContacting" id="reasonForContacting1" value="reference" checked>
+                            <label class="form-check-label" for="reasonForContacting1">
+                                Reference
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="reasonForContacting" id="reasonForContacting2" value="testimonial">
+                            <label class="form-check-label" for="reasonForContacting2">
+                                Testimonial
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="reasonForContacting" id="reasonForContacting3" value="workRequest">
+                            <label class="form-check-label" for="reasonForContacting3">
+                                Request Services
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label>
+                            Comments:
+                            <textarea name="comment" class="form-control" rows="10" cols="100"></textarea>
+                        </label>
+                    </div>
+                </div>
+                <input type="submit" name="submit" class="btn btn-primary">
             </form>
         </section>
 
@@ -201,5 +256,9 @@
             </div>
         </footer>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

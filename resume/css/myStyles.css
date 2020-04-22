@@ -1,0 +1,14 @@
+#home {
+    height: 65vh;
+    position: relative;
+    margin-top: 3.5rem;
+    padding-left: 21vw;
+    padding-top: 45vh;
+
+    background-image: url(../images/DSCN0179\ \(2\).JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: white;
+}
