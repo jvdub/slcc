@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Output</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-1">JavaScript Basics</h1>
+        <div class="jumbotron">
+            <h1>JavaScript Code</h1>
+            <p>You've seen some examples of code. Let's go over some syntax.</p>
+            <p>Here is a basic statement:</p>
+            <pre><code>
+                let myVariable = 123;
+            </code></pre>
+            <p>Here we declare a variable using the <code>let</code> keyword. We name the variable <code>myVariable</code> and assign the value <code>123</code> to it. Finally, we terminate the statement with the semi-colon (<code>;</code>).</p>
+            <p>Variables are used to store information that the program can use. Variables are so named because their contents can vary over the course of the program.</p>
+            <p>JavaScript also has constants. These are similar to variables in that they store data for the program, but their contents don't change.</p>
+            <h2>Variable Types</h2>
+            <p>There are five types of variables in JavaScript:</p>
+            <ul>
+                <li>Number (eg. 1, 2, 100, 200, etc.)</li>
+                <li>String (eg. 'Hello World!')</li>
+                <li>Object (eg. { make: 'Nissan', model: 'GT-R', year: '2020', drive: 'AWD', hp: 600 })</li>
+                <li>Boolean (eg. true, false)</li>
+                <li>Null (eg. Null, basically means the variable is defined but holds nothing)</li>
+            </ul>
+            <h2>Types of Operators</h2>
+            <p>Operators allow us to perform specific actions with our variables.</p>
+            <p>Here are the four types of operators:</p>
+            <ul>
+                <li>Arithmetic (add, subtract, multiply, etc.)</li>
+                <li>Comparison (equal, not equal, greater than, etc.)</li>
+                <li>Assignment (Store this value in this variable)</li>
+                <li>Logical (And, or, etc.)</li>
+            </ul>
+            <h2>Functions</h2>
+            <p>Functions are a way to bundle up a set of instructions to use over and over or to organize specific actions.</p>
+            <p>Here is the basic syntax of a function:</p>
+            <pre><code>
+                function myFunction() {
+                    document.write('Test this out!');
+                }
+
+                myFunction(); // This is how to call the function
+            </code></pre>
+            <h2>Objects</h2>
+            <p>Objects are heavily used in JavaScript and are highly useful.</p>
+            <p>Objects are a collection of values that describe an item meaningful to the program.</p>
+            <pre><code>
+                let person = {
+                    firstName: 'John',
+                    lastName: 'Van Wagenen',
+                    phone: '801-555-5555',
+                    email: 'test@email.com',
+                    address: {
+                        street: '1234 test parkway',
+                        city: 'Anytown',
+                        state: 'UT',
+                        country: 'USA'
+                    }
+                };
+
+                console.log(person.firstName); // prints 'John'
+                console.log(person.lastName); // prints 'Van Wagenen'
+                console.log(person.address.city); // prints 'Anytown'
+            </code></pre>
+            <p>Objects can hold many things and many types of values. They are very flexible and can represent just about any data you'll need.</p>
+            <h2>Arrays</h2>
+            <p>While objects allow you to represent complex data objects, Arrays allow you to store multiple similar things.</p>
+            <pre><code>
+                let breakfastFoods = [
+                    'yogurt',
+                    'granola',
+                    'pancakes',
+                    'eggs',
+                    'bacon',
+                    'quiche'
+                ];
+
+                console.log(breakfastFoods[0]); // prints 'yogurt'
+                console.log(breakfastFoods[1]); // prints 'granola'
+            </code></pre>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

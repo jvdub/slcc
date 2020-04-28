@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Output</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-1">JavaScript Output</h1>
+            <p class="lead">So... How does JS interact with the web page?</p>
+            <p>There are multiple ways to interact with the web page! Let's talk the most common.</p>
+            <h2><code>innerHTML</code></h2>
+            <p><code>innerHTML</code> is used to set the HTML within the given element.</p>
+            <p>This is possibly the most common way to output to the page in JavaScript.</p>
+            <p id="my-paragraph"></p>
+            <script>
+                document.getElementById('my-paragraph').innerHTML = 'The text for my paragraph';
+            </script>
+            <pre><code>
+                &lt;p id="my-paragraph"&gt;&lt;/p&gt;
+                &lt;script&gt;
+                    document.getElementById('my-paragraph').innerHTML = 'The text for my paragraph';
+                &lt;/script&gt;
+            </code></pre>
+            <h2><code>document.write</code></h2>
+            <p>This method is less common. This method is used to write an entire page.</p>
+            <p>Generally this is only used when creating entire web pages in JavaScript.</p>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/write">Here</a> is a good eample of this.</p>
+            <h2><code>window.alert()</code></h2>
+            <p>This is a once common method to create pop-up windows.</p>
+            <p>With the advent of more powerful CSS and HTML, <code>window.alert()</code> is not used as much anymore.</p>
+            <p>Bootstrap offers another way to create pop-up windows with its <a href="https://getbootstrap.com/docs/4.0/components/modal/"><code>.modal()</code></a> functions and classes.</p>
+            <h2><code>console.log()</code></h2>
+            <p><code>console.log()</code> is a very common method to output to the developer tools.</p>
+            <p><code>console.log()</code> often used when testing and debugging to see values at different points of execution.</p>
+            <p>Keep <code>console.log()</code> in mind and use it as you develope site. Just remember to remove unnecessary or sensitive logs before going live.</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
