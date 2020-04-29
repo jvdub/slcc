@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/myStyles.css">
 </head>
-<body>
+<body onload="greetings();">
     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-warning">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav" aria-controls="mynav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon text-dark"></span>
@@ -257,11 +257,9 @@
                 <a href="../De-Blame Collusion_1.1.pdf">Resume</a>
             </div>
         </footer>
-
-        <p id="my-paragraph"></p>
     </div>
 
-    <div class="modal fade" id="getUserName" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="getUserNameLabel" aria-hidden="true">
+    <div class="modal fade" id="getUserName" tabindex="-1" role="dialog" aria-labelledby="getUserNameLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -282,7 +280,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="greetUser" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="greetUserLabel" aria-hidden="true">
+    <div class="modal fade" id="greetUser" tabindex="-1" role="dialog" aria-labelledby="greetUserLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
