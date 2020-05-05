@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean Logic and Loops</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-1">Boolean Logic and Loops</h1>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h2>Comparion Operators</h2>
+                <p>Comparison operators help your program make decisions based on the relative values of two or more items.</p>
+                <p>These are basic comparisons that you should already know how they work, you just need to know how JavaScript defines them.</p>
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison_operators">Here</a> are the comparison operators.</p>
+                <p>You sometimes want to do multiple comparisons. You can chain comparisons together using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators">Logical Operators</a>.</p>
+            </div>
+        </div>
+        <h2>Conditional Statements</h2>
+        <p>Using comparison and logical operators, you can now formulate your own conditional statments.</p>
+        <p>Conditional Statements are generally created with the <code>if</code> keyword. The <code>if</code> keyword can be used in conjunction with the <code>else</code> keyword. You can even chain them together and have <code>else if</code> statments as well.</p>
+        <pre><code>
+            if (doIHaveAThing() === true) {
+                // If doIHaveAThing returns true, the code in here will run
+                console.log('I have a thing!');
+            } else if (doIHaveAThing() === true && doesMegamindWantsMeToLeave() === true) {
+                // If I have a thing and Megamind wants me to leave, this code block will run
+                console.log("Fine! I'll pack my thing and leave!");
+            }
+            else {
+                // If I don't have a thing, this code block will execute
+                console.log('I wish I had a thing...');
+            }
+        </code></pre>
+        <p>In the above example, what happens if I don't have a thing but Megamind wants me to leave?</p>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h2 class="display-2">Loops</h2>
+                <iframe src="https://giphy.com/embed/173tc9HboKr6M" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                <p id="loop">Loops make doing repetative things tolerable.</p>
+                <p>With a loop, you can perform a certain set of instructions multiple times while only writing those instructions once.</p>
+                <p>Let's consider the case where you need to display a list of items on the screen. Here's our list:</p>
+                <pre><code>
+                    let myList = [ "HTML", "CSS", "JavaScript", "PHP", "MySQL" ];
+                </code></pre>
+
+                <h3><code>while</code></h3>
+                <p>The <code>while</code> loop is the most basic loop. To display the items in the list above, we'd do something like the following:</p>
+                <pre><code>
+                    let i = 0;
+                    while (i < myList.length) {
+                        console.log(myList[i]);
+                        ++i;
+                    }
+                </code></pre>
+                <p>This will log every item in the array to the console and then stop when the index is bigger than the length of the array.</p>
+                <p>What happens if we increment <code>i</code> before logging <code>myList[i]</code>?</p>
+                <p>NOTE: While loops are basic and they're very easy to create infinite loops with. Make sure your condition can and will be <code>false</code> at some point.</p>
+                <p>NOTE: The condition in the parens is treated as any <code>if</code> statement. It can be as complex or simple as you'd like (please keep it simple).</p>
+
+                <h3><code>do/while</code></h3>
+                <p>The <code>do/while</code> loop is similar to the <code>while</code> loop except it will always execute at least once.</p>
+                <pre><code>
+                    let i = 0;
+                    do {
+                        console.log(myList[i]);
+                        ++i;
+                    } while (i < myList.length);
+                </code></pre>
+                <p>This will log every item in the array to the console and then stop when the index is bigger than the length of the array.</p>
+                <p>What happens if we increment <code>i</code> before logging <code>myList[i]</code>?</p>
+
+                <h3><code>for</code></h3>
+                <p>The <code>for</code> loop is a shorthand way of writing a <code>while</code> loop.</p>
+                <pre><code>
+                    for (let i = 0; i < myList.length; ++i) {
+                        console.log(myList[i]);
+                    }
+                </code></pre>
+                <p>This will log every item in the array to the console and then stop when the index is bigger than the length of the array.</p>
+
+                <h3><code>for/in</code></h3>
+                <p>The <code>for/in</code> loop is similar to the <code>for</code>> loop except it takes care of the counting for you.</p>
+                <pre><code>
+                    for (let item in myList) {
+                        console.log(item);
+                    }
+                </code></pre>
+                <p>This will log every item in <code>myList</code> to the console.</p>
+
+                <h3><code>for/of</code></h3>
+                <p>The <code>for/of</code> loop is very similar to the <code>for/in</code> loop except it only iterates over iterable items and not all string-typed keys (like <code>for/in</code>).</p>
+                <pre><code>
+                    for (let item of myList) {
+                        console.log(item);
+                    }
+                </code></pre>
+                <p>This will log every item in <code>myList</code> to the console.</p>
+                <p>Whenever possible, use <code>for/of</code>. As you get to know JS more, learn the why behind this. For now, just use it by default if at all possible.</p>
+                <h3>Special Keywords</h3>
+                <p>Sometimes when looping, you want to either stop looping altogether once something happens or you want to skip certain items in the list.</p>
+                <p>The <code>break</code> and <code>continue</code> keywords make this possible.</p>
+                <ul>
+                    <li><code>break</code>
+                        <ul>
+                            <li>Stops the loop altogether and begins executing the code immediately following the loops closing brace.</li>
+                        </ul>
+                    </li>
+                    <li><code>continue</code>
+                        <ul>
+                            <li>Skips the current iteration of the loop and continues to the next iteration of the loop.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let loop = document.getElementById('loop');
+
+            for (let i = 0; i < 10; ++i) {
+                loop.innerHTML = `${loop.innerHTML}<br> Loops make doing repetative things tolerable.`;
+            }
+        });
+    </script>
+</body>
+</html>
