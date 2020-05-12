@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-1">Error Handling</h1>
+        <p class="lead">For when things don't go exactly as planned.</p>
+        <p>For your website to perform well under all circumstances, you'll need to tell it how to handle errors.</p>
+        <p>
+            Your users will inevitably do things that you didn't think about.
+            Adding code to handle errors is essential so that the website continues
+            to operate when something happens that it doesn't expect.
+        </p>
+        <p>If you don't handle errors, your site could be partially impaired or completely unusable.</p>
+        <div class="jumbotron">
+            <div class="container">
+                <h2>Exceptions</h2>
+                <p>Most programming languages (JavaScript included) have a concept of <strong>Exceptions</strong>.</p>
+                <p>Exceptions are what happen when the program encounters an error.</p>
+                <p>You might say the code you write are the "rules" the computer follows and when something breaks those rules, it's en "exception" and you'll need to tell it how to handle it.</p>
+                <p>
+                    Exceptions can happen for a number of reasons. Here are some examples:
+                    <ul>
+                        <li>The code syntax is invalid</li>
+                        <li>The object property or method doesn't exist</li>
+                        <li>The variable isn't of the data type you thought it was</li>
+                        <li>Something went wrong with an HTTP request</li>
+                        <li>... and many, many more ...</li>
+                    </ul>
+                </p>
+                <h2>Handling Exceptions</h2>
+                <p>All programming languages have a way to deal with errors as they arise.</p>
+                <p>JavaScript (and many other languages) use the <code>try</code> and <code>catch</code> keywords to handle exceptions.</p>
+                <pre><code>
+                    try {
+                        // Do a thing
+                    } catch (e) {
+                        // Something went wrong while doing a thing
+                        // The variable `e` usually has a message and other helpful things to figure out what went wrong.
+                    }
+                </code></pre>
+                <p>Here's a more real example:</p>
+                <pre><code>
+                    function calculateSlope(rise, run) {
+                        return rise / run;
+                    }
+
+                    let x = 0;
+                    let y = 5;
+
+                    try {
+                        let slope = calculateSlope(y, x);
+                    } catch (e) {
+                        console.log('Something went wrong!');
+                        console.log(e);
+                    }
+                </code></pre>
+                <p>In the code above, a divide by zero exception is thrown. We catch it and log it to the console.</p>
+                <p>Because we catch it, the website keeps operating. If we didn't catch it, the site would stop working.</p>
+                <hr>
+                <p>Every once in a while, you want to do something no matter if an exception occurs or not.</p>
+                <p>You can do this with the <code>finally</code> keyword.</p>
+                <pre><code>
+                    try {
+                        // Do a thing
+                    } catch (e) {
+                        // Something went wrong while doing a thing
+                        // The variable `e` usually has a message and other helpful things to figure out what went wrong.
+                    } finally {
+                        // This runs whether or not an error was thrown.
+                    }
+                </code></pre>
+                <p>The <code>finally</code> block is usually used for clean-up items such as closing a file, closing a connection, deleting things that aren't needed, or other clea-up tasks.</p>
+                <h3>Throwing Exceptions</h3>
+                <p>From time to time, you'll encounter situations where you want to raise an exception. You want to create an error.</p>
+                <p>You can do this using the <code>throw</code> keyword.</p>
+                <p>If you ever <code>throw</code> and exception, you should always <code>catch</code> it later if possible.</p>
+                <pre><code>
+                    function calculateSlope(rise, run) {
+                        if (run === 0) {
+                            throw 'Run cannot be zero!';
+                        }
+
+                        return rise / run;
+                    }
+
+                    let x = 0;
+                    let y = 5;
+
+                    try {
+                        let slope = calculateSlope(y, x);
+                    } catch (e) {
+                        console.log('Something went wrong!');
+                        console.log(e);
+                    }
+                </code></pre>
+                <p>This time our code shows "Run cannot be zero" instead of a divide by zero error.</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
