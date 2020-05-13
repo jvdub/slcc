@@ -11,3 +11,8 @@
 
     color: white;
 }
+
+input:invalid {
+    border-color: red;
+    background-color: pink;
+}

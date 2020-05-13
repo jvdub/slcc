@@ -210,65 +210,51 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Bob Dole</td>
-                        <td>800-555-5555</td>
-                        <td>bob.dole@aol.com</td>
-                    </tr>
-                    <tr>
-                        <td>Bill Clinton</td>
-                        <td>800-555-1234</td>
-                        <td>bill@aol.com</td>
-                    </tr>
-                    <tr>
-                        <td>Ralph Nader</td>
-                        <td>800-555-2345</td>
-                        <td>ralph.nader@aol.com</td>
-                    </tr>
+                    <!-- References will be inserted using JS -->
                 </tbody>
             </table>
         </section>
 
         <section id="contact">
             <h1>Contact</h1>
-            <form method="POST">
+            <form method="POST" id="form">
                 <div class="row">
                     <div class="col-md form-group">
                         <label for="name">
                             Name:
                         </label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
                     </div>
                     <div class="col-md form-group">
                         <label for="email">
                             Email:
                         </label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="email@email.com">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="email@email.com" required>
                     </div>
                     <div class="col-md form-group">
                         <label for="phone-number">
                             Phone Number:
                         </label>
-                        <input type="text" id="phone-number" name="phoneNumber" class="form-control" placeholder="800-555-1234">
+                        <input type="text" id="phone-number" name="phoneNumber" class="form-control" placeholder="800-555-1234" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col form-group">
                         <p>Reason for contacting:</p>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="reasonForContacting" id="reasonForContacting1" value="reference" checked>
+                            <input class="form-check-input" type="radio" name="reasonForContacting" id="reasonForContacting1" value="reference" required>
                             <label class="form-check-label" for="reasonForContacting1">
                                 Reference
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="reasonForContacting" id="reasonForContacting2" value="testimonial">
+                            <input class="form-check-input" type="radio" name="reasonForContacting" id="reasonForContacting2" value="testimonial" required>
                             <label class="form-check-label" for="reasonForContacting2">
                                 Testimonial
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="reasonForContacting" id="reasonForContacting3" value="workRequest">
+                            <input class="form-check-input" type="radio" name="reasonForContacting" id="reasonForContacting3" value="workRequest" required>
                             <label class="form-check-label" for="reasonForContacting3">
                                 Request Services
                             </label>
@@ -279,11 +265,11 @@
                     <div class="col form-group">
                         <label>
                             Comments:
-                            <textarea id="comment" name="comment" class="form-control" rows="10" cols="100"></textarea>
+                            <textarea id="comment" name="comment" class="form-control" rows="5" cols="75" maxlength="280"></textarea>
                         </label>
                     </div>
                 </div>
-                <input id="submit" type="submit" name="submit" class="btn btn-primary">
+                <input id="submit" type="submit" name="submit" id="submit" class="btn btn-primary">
             </form>
         </section>
 
