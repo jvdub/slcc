@@ -118,53 +118,67 @@ $(document).ready(() => {
     customizeGreeting();
     displayReferences();
 
-    // document.getElementById('form').onsubmit = validateForm;
-    // document.querySelector('#form').addEventListener('submit', validateForm);
-    // $('#form').on('submit', validateForm);
-    $('#form').submit(validateForm);
     attachEvents();
 });
 
 function attachEvents() {
+    // document.getElementById('form').onsubmit = validateForm;
+    // document.querySelector('#form').addEventListener('submit', validateForm);
+    // $('#form').on('submit', validateForm);
+    $('#form').submit(validateForm);
     $('#submit').click(doAThing);
     $('.school').click(toggleSubtext);
 }
 
 function toggleSubtext($event) {
-    $($event.target.nextElementSibling).toggle({ duration: 1000 });
+    $($event.target.nextElementSibling).toggle();
 }
 
-function validateForm(event) {
+function validateForm($event) {
     // if (!document.getElementById('name').value.includes(' ')) {
-    // if (!$('#name').val().includes(' ')) {
-    if (!document.querySelector('#name').value.includes(' ')) {
-        console.log('Enter your full name!');
-        event.preventDefault();
+    // if (!document.querySelector('#name').value.includes(' ')) {
+    if (!$('#name').val().includes(' ')) {
+        $('#name-alert').addClass('show');
+    } else {
+        $('#name-alert').removeClass('show');
     }
+
+    if (!$('#email').val().match(/([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})/)) {
+        $('#email-alert').addClass('show');
+    } else {
+        $('#email-alert').removeClass('show');
+    }
+
+    $event.preventDefault();
 }
 
 function doAThing() {
-    let contact = {
-        name: '',
-        email: '',
-        phoneNumber: '',
-        reason: '',
-        comment: ''
-    };
+    try {
+        let contact = {
+            name: '',
+            email: '',
+            phoneNumber: '',
+            reason: '',
+            comment: ''
+        };
 
-    // JS way
-    contact.name = document.querySelector('#name').value;
-    contact.email = document.querySelector('#email').value;
-    contact.phoneNumber = document.querySelector('#phone-number').value;
-    contact.reason = document.querySelector('input[name="reasonForContacting"]:checked').value;
-    contact.comment = document.querySelector('#comment').value;
+        // JS way
+        contact.name = document.querySelector('#name').value;
+        contact.email = document.querySelector('#email').value;
+        contact.phoneNumber = document.querySelector('#phone-number').value;
+        contact.reason = document.querySelector('input[name="reasonForContacting"]:checked').value;
+        contact.comment = document.querySelector('#comment').value;
 
-    // jQuery way
-    // contact.name = $('#name').val();
-    // contact.email = $('#email').val();
-    // contact.phoneNumber = $('#phone-number').val();
-    // contact.reason = $('input[name="reasonForContacting"]:checked').val();
-    // contact.comment = $('#comment').val();
+        // jQuery way
+        // contact.name = $('#name').val();
+        // contact.email = $('#email').val();
+        // contact.phoneNumber = $('#phone-number').val();
+        // contact.reason = $('input[name="reasonForContacting"]:checked').val();
+        // contact.comment = $('#comment').val();
 
-    console.log(contact);
+        console.log(contact);
+    } catch (e) {
+        console.log('Something is broken!');
+        console.error(e);
+    }
 }
