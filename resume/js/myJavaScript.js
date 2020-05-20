@@ -14,7 +14,9 @@ function customizeGreeting() {
 }
 
 function displayGreetingMessage(message) {
-    document.getElementById('message').innerHTML = message;
+    // document.getElementById('message').innerHTML = message; // This is the OLD JS way
+    // document.querySelector('#message').innerHTML = message; // This is the NEW JS way
+    $('#message').html(message); // This is the jQuery Way
 }
 
 function getTimeOfDay() {
@@ -24,8 +26,14 @@ function getTimeOfDay() {
 }
 
 function greetUser() {
-    let name = document.getElementById('greetingName').value;
-    document.getElementById('userName').innerHTML = name;
+    let nameOld = document.getElementById('greetingName').value; // This is the OLD JS way
+    let name = document.querySelector('#greetingName').value; // This is the NEW JS way
+    let nameJQuery = $('#greetingName').val(); // This is the jQuery Way
+
+    // document.getElementById('userName').innerHTML = name; // This is the OLD JS way
+    // document.querySelector('#userName').innerHTML = name; // This is the NEW JS way
+    $('#userName').html(name); // This is the jQuery Way
+
     $('#getUserName').modal('hide');
     $('#greetUser').modal('show');
 }
@@ -55,6 +63,7 @@ function displayReferences() {
     ];
 
     let tableBody = document.querySelector('#references-table > tbody');
+    // let tableBodyJQuery = $('#references-table > tbody'); // jQuery way
 
     // let i = 0;
     // while (i < references.length) {
@@ -86,6 +95,7 @@ function displayReferences() {
         </tr>`;
 
         tableBody.innerHTML += html;
+        // tableBodyJQuery.html(tableBodyJQuery.html() + html); // If using jQuery
 
     //    let tr = document.createElement('tr');
     //    let nameCell = document.createElement('td');
@@ -108,12 +118,53 @@ $(document).ready(() => {
     customizeGreeting();
     displayReferences();
 
-    document.getElementById('form').onsubmit = validateForm;
+    // document.getElementById('form').onsubmit = validateForm;
+    // document.querySelector('#form').addEventListener('submit', validateForm);
+    // $('#form').on('submit', validateForm);
+    $('#form').submit(validateForm);
+    attachEvents();
 });
 
+function attachEvents() {
+    $('#submit').click(doAThing);
+    $('.school').click(toggleSubtext);
+}
+
+function toggleSubtext($event) {
+    $($event.target.nextElementSibling).toggle({ duration: 1000 });
+}
+
 function validateForm(event) {
-    if (!document.getElementById('name').value.includes(' ')) {
+    // if (!document.getElementById('name').value.includes(' ')) {
+    // if (!$('#name').val().includes(' ')) {
+    if (!document.querySelector('#name').value.includes(' ')) {
         console.log('Enter your full name!');
         event.preventDefault();
     }
+}
+
+function doAThing() {
+    let contact = {
+        name: '',
+        email: '',
+        phoneNumber: '',
+        reason: '',
+        comment: ''
+    };
+
+    // JS way
+    contact.name = document.querySelector('#name').value;
+    contact.email = document.querySelector('#email').value;
+    contact.phoneNumber = document.querySelector('#phone-number').value;
+    contact.reason = document.querySelector('input[name="reasonForContacting"]:checked').value;
+    contact.comment = document.querySelector('#comment').value;
+
+    // jQuery way
+    // contact.name = $('#name').val();
+    // contact.email = $('#email').val();
+    // contact.phoneNumber = $('#phone-number').val();
+    // contact.reason = $('input[name="reasonForContacting"]:checked').val();
+    // contact.comment = $('#comment').val();
+
+    console.log(contact);
 }
