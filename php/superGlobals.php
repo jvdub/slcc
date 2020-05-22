@@ -10,7 +10,13 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1></h1>
+            <div class="container">
+                <h1>Super Globals</h1>
+                <p><a href="https://www.php.net/manual/en/language.variables.superglobals.php">Super Global</a> variables are special, built-in variables that PHP populates with values.</p>
+                <p>They are accessible from anywhere in PHP.</p>
+                <p>The most commonly used are <code>$_SERVER</code>, <code>$_GET</code>, and <code>$_POST</code>, though others are available and used.
+                <p>We won't be using these today, but will be using them next week.</p>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
