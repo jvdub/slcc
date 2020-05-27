@@ -108,7 +108,7 @@
                 <hr>
                 <h3><code>for</code></h3>
                 <pre><code>
-                for ($i = 0; $i < count($myList); ++$i;) {
+                for ($i = 0; $i < count($myList); ++$i) {
                     echo $myList[$i] . "&lt;br>";
                 }
                 </code></pre>

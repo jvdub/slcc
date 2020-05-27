@@ -148,80 +148,34 @@
             </div>
         </div>
 
-        <!-- Here is just HTML -->
-        <?php
-        // Everything in here is PHP
-        // $mySkillz = array("HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL");
-        $mySkillz = ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"];
-        $languages = ["JavaScript", "Java", "SQL (T-SQL, Postgres, MySQL)", "HTML/CSS", "Python"];
-        $frameworks = ["Angular", "Spring", "Vue.js"];
-        $leadership = ["Technical Leadershsip", "Team Leadershsip", "Mentoring", "Career Guidance"];
-        $skillz = [
-            "Languages" => ["JavaScript", "Java", "SQL (T-SQL, Postgres, MySQL)", "HTML/CSS", "Python"],
-            "Frameworks" => ["Angular", "Spring", "Vue.js"],
-            "Leadership" => ["Technical Leadershsip", "Team Leadershsip", "Mentoring", "Career Guidance"]
-        ];
-        ?>
-        <!-- Here is just HTML -->
-
-        <!-- <div class="container">
-            <section id="skills">
-                <h1>Technical Skills in PHP</h1>
-                <?php
-                // echo "<ul>";
-                // foreach ($mySkillz as $skill) {
-                //     echo "<li>" . $skill . "</li>";
-                // }
-                // echo "</ul>";
-                ?>
-                <ul>
-                    <?php // foreach ($mySkillz as $skill) { ?>
-                        <li><?php // echo $skill ?></li>
-                    <?php // } ?>
-                </ul>
-            </section>
-        </div> -->
-
         <div class="container">
-            <!-- <section id="skills">
+            <section id="skills">
                 <h1>Technical Skills</h1>
                 <ul class="row">
                     <li class="col-md">Languages
                         <ul>
-                        <?php //foreach ($languages as $lang) { ?>
-                            <li><?php //echo $lang ?></li>
-                        <?php //} ?>
+                            <li>JavaScript</li>
+                            <li>Java</li>
+                            <li>SQL (T-SQL, Postgres, MySQL)</li>
+                            <li>HTML/CSS</li>
+                            <li>Python</li>
                         </ul>
                     </li>
                     <li class="col-md">Frameworks
                         <ul>
-                        <?php //foreach ($frameworks as $frmwk) { ?>
-                            <li><?php //echo $frmwk ?></li>
-                        <?php //} ?>
+                            <li>Angular</li>
+                            <li>Spring</li>
+                            <li>Vue.js</li>
                         </ul>
                     </li>
                     <li class="col-md">Leadership
                         <ul>
-                        <?php //foreach ($leadership as $lead) { ?>
-                            <li><?php //echo $lead ?></li>
-                        <?php //} ?>
+                            <li>Technical Leadershsip</li>
+                            <li>Team Leadershsip</li>
+                            <li>Mentoring</li>
+                            <li>Career Guidance</li>
                         </ul>
                     </li>
-                </ul>
-            </section> -->
-
-            <section id="skills">
-                <h1>Technical Skills</h1>
-                <ul class="row">
-                    <?php foreach ($skillz as $topic => $skills) { ?>
-                    <li class="col-md"><?php echo $topic ?>
-                        <ul>
-                        <?php foreach ($skills as $skill) { ?>
-                            <li><?php echo $skill ?></li>
-                        <?php } ?>
-                        </ul>
-                    </li>
-                    <?php } ?>
                 </ul>
             </section>
 
