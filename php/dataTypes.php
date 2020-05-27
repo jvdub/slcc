@@ -15,7 +15,7 @@
                 <p>
                     These are the <a href="https://www.php.net/manual/en/language.types.intro.php">Data Types</a> in PHP:
                     <ul>
-                        <li>Booleann (true or false)</li>
+                        <li>Boolean (true or false)</li>
                         <li>Integer (a whole number)</li>
                         <li>Float (a number with a decimal)</li>
                         <li>String (a list of characters)</li>
