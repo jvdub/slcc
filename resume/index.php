@@ -168,7 +168,7 @@
             <section id="skills">
                 <h1>Technical Skills in PHP</h1>
                 <?php
-                // echo "<ul>";
+                // echo '<ul class="row">';
                 // foreach ($mySkillz as $skill) {
                 //     echo "<li>" . $skill . "</li>";
                 // }
