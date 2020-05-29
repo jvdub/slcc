@@ -105,11 +105,11 @@ function displayReferences() {
     //    let emailCell = document.createElement('td');
     //    emailCell.innerText = reference.email;
 
-    //    tr.appendChild(nameCell);
-    //    tr.appendChild(phoneCell);
-    //    tr.appendChild(emailCell);
+    //    tr.append(nameCell);
+    //    tr.append(phoneCell);
+    //    tr.append(emailCell);
 
-    //    tableBody.appendChild(tr);
+    //    tableBody.append(tr);
     }
 }
 
