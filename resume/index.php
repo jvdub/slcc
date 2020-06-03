@@ -265,13 +265,123 @@
 
             <section id="contact">
                 <h1>Contact</h1>
-                <form method="POST" id="form">
+                <?php
+                try {
+                    function cleanData($data) {
+                        $data = htmlspecialchars($data);
+                        $data = trim($data);
+                        $data = stripslashes($data);
+
+                        return $data;
+                    }
+
+                    $name = "";
+                    $nameErr = "";
+                    $email = "";
+                    $emailErr = "";
+                    $phone = "";
+                    $phoneErr = "";
+                    $reasonForContacting = "";
+                    $reasonForContactingErr = "";
+                    $comment = "";
+                    $successMessage = '';
+
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        if (empty($_POST["name"])) {
+                            $nameErr = "The name field is required!";
+                        } else {
+                            $name = cleanData($_POST["name"]);
+
+                            if (preg_match("/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/", $name)) {
+                                echo $name;
+                            } else {
+                                $nameErr = "Please enter a valid name!";
+                            }
+                        }
+
+                        if (empty($_POST["email"])) {
+                            $emailErr = "The email field is required!";
+                        } else {
+                            $email = cleanData($_POST["email"]);
+
+                            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                                echo $email;
+                            } else {
+                                $emailErr = "Please enter a valid email address!";
+                            }
+                        }
+
+                        if (!empty($_POST["phoneNumber"])) {
+                            $phone = cleanData($_POST["phoneNumber"]);
+
+                            if (preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/", $phone)) {
+                                echo $phone;
+                            } else {
+                                $phoneErr = "Please enter a valid phone number!";
+                            }
+                        }
+
+                        if (empty($_POST["reasonForContacting"])) {
+                            $reasonForContactingErr = "The reason for contacting field is required!";
+                        } else {
+                            $reasonForContacting = cleanData($_POST["reasonForContacting"]);
+                            echo $reasonForContacting;
+                        }
+
+                        if (!empty($_POST["comment"])) {
+                            $comment = cleanData($_POST["comment"]);
+                        }
+
+                        if (!empty($name) && !empty($email) && !empty($reasonForContacting)) {
+                            $to = 'jtvanwage@gmail.com,jvanwa43@slcc.edu';
+                            $subject = 'You Have a New Contact!';
+
+                            if ($reasonForContacting === 'reference') {
+                                $subject = 'You Have Someone Willing to be Your Reference!';
+                            } elseif ($reasonForContacting === 'testimonial') {
+                                $subject = 'You Have a New Testimonial!';
+                            } elseif ($reasonForContacting === 'workRequest') {
+                                $subject = 'You Have a New Request for Work!';
+                            }
+
+                            $headers = "From: ".$email."\r\n";
+                            $headers .= "Reply-To: ".$email."\r\n";
+
+                            $emailBody = $name.' has contacted you via your resume site! Their contact information is as follows:\r\n'
+                                .'Name: '.$name.'\r\n'
+                                .'Email: '.$email.'\r\n'
+                                .'Phone Number: '.$phone.'\r\n'
+                                .'Reason For Contacting: '.$reasonForContacting.'\r\n'
+                                .'Comment: '.$comment.'\r\n';
+
+                            if (mail($to, $subject, $emailBody, $headers)) {
+                                $headers = "From: ".$to."\r\n";
+                                $headers .= "Reply-To: ".$to."\r\n";
+
+                                if (mail($email, 'Thank You For Contacting Me!', 'Thank you for sending your information! I will contact you soon.', $headers)) {
+                                    $successMessage = 'Thank you for your contact information!';
+                                } else {
+                                    // Something broke
+                                }
+                            } else {
+                                // Something broke
+                            }
+                        }
+                    }
+                } catch (Exception $e) {
+                    echo $e;
+                }
+                ?>
+                <form method="POST" id="form" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                     <div class="row">
                         <div class="col-md form-group">
                             <label for="name">
                                 Name:
                             </label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                            <?php
+                            echo '<p class="invalid">'.$nameErr.'</p>';
+                            ?>
                             <div class="alert alert-danger fade" role="alert" id="name-alert">
                                 Please enter your full name.
                             </div>
@@ -281,6 +391,9 @@
                                 Email:
                             </label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="email@email.com" required>
+                            <?php
+                            echo '<p class="invalid">'.$emailErr.'</p>';
+                            ?>
                             <div class="alert alert-danger fade" role="alert" id="email-alert">
                                 Please enter a valid email address.
                             </div>
@@ -289,7 +402,10 @@
                             <label for="phone-number">
                                 Phone Number:
                             </label>
-                            <input type="text" id="phone-number" name="phoneNumber" class="form-control" placeholder="800-555-1234" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            <input type="text" id="phone-number" name="phoneNumber" class="form-control" placeholder="800-555-1234">
+                            <?php
+                            echo '<p class="invalid">'.$phoneErr.'</p>';
+                            ?>
                         </div>
                     </div>
                     <div class="row">
@@ -313,6 +429,9 @@
                                     Request Services
                                 </label>
                             </div>
+                            <?php
+                            echo '<p class="invalid">'.$reasonForContactingErr.'</p>';
+                            ?>
                         </div>
                     </div>
                     <div class="row">
@@ -324,6 +443,7 @@
                         </div>
                     </div>
                     <input id="submit" type="submit" name="submit" class="btn btn-primary">
+                    <?php echo $successMessage; ?>
                 </form>
             </section>
         </div>
@@ -385,3 +505,5 @@
 <?php } catch (Exception $e) {
     echo $e;
 } ?>
+
+<!--  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" -->

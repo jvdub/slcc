@@ -76,6 +76,10 @@
             $nameErr = "Only letters and whitespace allowed";
         }
         </code></pre>
+        <p>Another option you have for filtering data is the <a href="https://www.php.net/manual/en/function.filter-var.php"><code>filter_var</code></a> function in PHP.</p>
+        <p>There are many <a href="https://www.php.net/manual/en/filter.filters.php">types of filters</a> that you can use.</p>
+        <p>The <a href="https://www.php.net/manual/en/filter.filters.validate.php">validate</a> and <a href="https://www.php.net/manual/en/filter.filters.sanitize.php">sanitize</a> filters will be most useful to you.</p>
+        <p>Using these built-in functions reduces the regular expressions you'll need to use and increases the accuracty and reliability of your filters.</p>
         <div class="jumbotron">
             <div class="container">
                 <h1>Sending Email</h1>

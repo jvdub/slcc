@@ -13,7 +13,7 @@
         <ol>
             <li><a href="../html/takeTheQuiz.html">Take the quiz</a></li>
             <li>Review last week and online material</li>
-            <li>include_once</li>
+            <li><a href="https://www.php.net/manual/en/function.include-once.php">include_once</a></li>
             <li><a href="formHandling.php">PHP Form Handling</a></li>
         </ol>
         <p class="lead">And here are the activities we'll do:</p>

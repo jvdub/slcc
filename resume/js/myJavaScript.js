@@ -137,19 +137,19 @@ function toggleSubtext($event) {
 function validateForm($event) {
     // if (!document.getElementById('name').value.includes(' ')) {
     // if (!document.querySelector('#name').value.includes(' ')) {
-    if (!$('#name').val().includes(' ')) {
-        $('#name-alert').addClass('show');
-    } else {
-        $('#name-alert').removeClass('show');
-    }
+    // if (!$('#name').val().includes(' ')) {
+    //     $('#name-alert').addClass('show');
+    //     $event.preventDefault();
+    // } else {
+    //     $('#name-alert').removeClass('show');
+    // }
 
-    if (!$('#email').val().match(/([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})/)) {
-        $('#email-alert').addClass('show');
-    } else {
-        $('#email-alert').removeClass('show');
-    }
-
-    $event.preventDefault();
+    // if (!$('#email').val().match(/([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})/)) {
+    //     $('#email-alert').addClass('show');
+    //     $event.preventDefault();
+    // } else {
+    //     $('#email-alert').removeClass('show');
+    // }
 }
 
 function doAThing() {
