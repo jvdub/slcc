@@ -5,10 +5,11 @@
     // get_content();
 
     function get_db_connection() {
+        // mysql -u millersummer2020 -p -h mysql.slccwebdev.com millersummer2020
         $servername = 'mysql.slccwebdev.com';
-        $database = 'miller19';
-        $username = 'miller19';
-        $password = 'SLCCMiller19';
+        $database = 'millerSummer2020';
+        $username = 'millersummer2020';
+        $password = 'SLCCMillerSummer2020';
         $connection;
 
         try {
@@ -53,7 +54,7 @@
         $conn = get_db_connection();
 
         try {
-            $sql = "INSERT INTO $tableName 
+            $sql = "INSERT INTO $tableName
                 (date, first_name, last_name, email, phone, company, contact_reason, contact_message)
                 VALUES
                 ($date, '$first_name', '$last_name', '$email', '$phone', '$company', '$contact_reason', '$contact_message')";
@@ -77,7 +78,7 @@
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
             // print_r($stmt->fetchAll());
 
-            foreach($stmt->fetchAll() as $row) { 
+            foreach($stmt->fetchAll() as $row) {
                 foreach($row as $data){
                     print '<br>'.$data;
                 }

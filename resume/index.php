@@ -358,7 +358,7 @@
                                 $headers = "From: ".$to."\r\n";
                                 $headers .= "Reply-To: ".$to."\r\n";
 
-                                if (mail($email, 'Thank You For Contacting Me!', 'Thank you for sending your information! I will contact you soon.', $headers)) {
+                                if (mail($email, 'Thank You For Your Contact Information!', 'Thank you for sending your information! I will contact you soon.', $headers)) {
                                     $successMessage = 'Thank you for your contact information!';
                                 } else {
                                     // Something broke
