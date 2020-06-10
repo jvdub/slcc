@@ -57,16 +57,16 @@
                     <th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th>
                 </tr>
             <?php
-            $stmt = $connection->prepare("SELECT * FROM MyGuests");
-            $stmt->execute();
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+            // $stmt = $connection->prepare("SELECT * FROM MyGuests");
+            // $stmt->execute();
+            // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
                 <tr>
                     <td><?php print $row['id']; ?></td>
                     <td><?php print $row['firstname']; ?></td>
                     <td><?php print $row['lastname']; ?></td>
                     <td><?php print $row['email']; ?></td>
                 </tr>
-            <?php } ?>
+            <?php// } ?>
             </table>
             <?php
         } catch (PDOException $e) {

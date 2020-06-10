@@ -13,7 +13,6 @@
         <ol>
             <li><a href="../html/takeTheQuiz.html">Take the quiz</a></li>
             <li>Review last week and online material</li>
-            <li><a href="https://www.php.net/manual/en/function.include-once.php">include_once</a></li>
             <li><a href="integratingPHPAndMySQL.php">Integrating PHP & MySQL</a></li>
             <li><a href="creatingDatabases.php">Creating Databases</a></li>
             <li><a href="creatingTablesWithDifferentFields.php">Creating Tables With Different Fields</a></li>

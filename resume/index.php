@@ -267,6 +267,30 @@
                 <h1>Contact</h1>
                 <?php
                 try {
+                    function get_db_connection() {
+                        // mysql -u millersummer2020 -p -h mysql.slccwebdev.com millersummer20
+                        $servername = 'mysql.slccwebdev.com';
+                        $database = 'millersummer20';
+                        $username = 'millersummer2020';
+                        $password = 'SLCCMillerSummer2020';
+                        $connection;
+
+                        try {
+                            $connection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+                            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            print 'Connected Successfully<br>';
+                        } catch (PDOException $e) {
+                            print 'Connection failed';
+                            print $e->getMessage();
+                        }
+
+                        return $connection;
+                    }
+
+                    function recordContactInformation() {
+                        $connection = get_db_connection();
+                    }
+
                     function cleanData($data) {
                         $data = htmlspecialchars($data);
                         $data = trim($data);
@@ -333,6 +357,8 @@
                         }
 
                         if (!empty($name) && !empty($email) && !empty($reasonForContacting)) {
+                            recordContactInformation();
+
                             $to = 'jtvanwage@gmail.com,jvanwa43@slcc.edu';
                             $subject = 'You Have a New Contact!';
 
@@ -368,6 +394,8 @@
                             }
                         }
                     }
+
+                    recordContactInformation();
                 } catch (Exception $e) {
                     echo $e;
                 }
