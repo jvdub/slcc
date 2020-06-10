@@ -267,6 +267,8 @@
                 <h1>Contact</h1>
                 <?php
                 try {
+                    $tableName = 'jtvanwage_contact_info';
+
                     function get_db_connection() {
                         // mysql -u millersummer2020 -p -h mysql.slccwebdev.com millersummer20
                         $servername = 'mysql.slccwebdev.com';
@@ -287,9 +289,53 @@
                         return $connection;
                     }
 
+                    function create_table() {
+                        $conn = get_db_connection();
+
+                        try {
+                            $sql = "CREATE TABLE jtvanwage_contact_info (
+                                    id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+                                    date TIMESTAMP,
+                                    name VARCHAR(255),
+                                    email VARCHAR(255),
+                                    phone VARCHAR(255),
+                                    contact_reason VARCHAR(255),
+                                    comment VARCHAR(255)
+                                )";
+
+                            $conn->exec($sql);
+                            print "Table $tableName created successfully";
+                        } catch(PDOException $e) {
+                            print "Could not create table $tableName: ".$e->getMessage();
+                        }
+
+                        $conn = null;
+                    }
+
+                    function populateData() {
+                        $conn = get_db_connection();
+                        try {
+                            $sql = "INSERT INTO jtvanwage_contact_info
+                                        (date, name, email, phone, contact_reason, comment)
+                                    VALUES
+                                        ('".date("Y-m-d H:i:s")."','John Van Wagenen', 'jtvanwage@gmail.com', '555-555-5555', 'testimonial', 'asdf')";
+
+                            $conn->exec($sql);
+                            print "Successfully inserted!";
+                        } catch(PDOException $e) {
+                            print "Could not create table $tableName: ".$e->getMessage();
+                        } finally {
+                            $conn->close();
+                        }
+                    }
+
                     function recordContactInformation() {
                         $connection = get_db_connection();
                     }
+
+                    recordContactInformation();
+                    // create_table();
+                    populateData();
 
                     function cleanData($data) {
                         $data = htmlspecialchars($data);
@@ -394,8 +440,6 @@
                             }
                         }
                     }
-
-                    recordContactInformation();
                 } catch (Exception $e) {
                     echo $e;
                 }
